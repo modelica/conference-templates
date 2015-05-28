@@ -92,11 +92,13 @@
 \let\modelica@bibliography\bibliography
 \renewcommand{\bibliography}[1]{\bibliographystyle{plainnat}\small\modelica@bibliography{#1}\normalsize}
 
-% Profesional tables
+% Professional tables
 \RequirePackage{booktabs}
 
 % Modelica code configuration
+\RequirePackage{color}
 \RequirePackage{listings}
-%\lstset{language = Modelica,
-%       basicstyle=\fontsize{9pt}{10.5pt}\selectfont,
-%       backgroundcolor = \color{white}}
+\input{resources/listings-modelica.cfg}
+\lstset{language = Modelica,
+       basicstyle=\fontsize{9pt}{10.5pt}\selectfont,
+       backgroundcolor = \color{white}}
