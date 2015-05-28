@@ -22,7 +22,7 @@
 
 \documentclass{modelica}
 
-\hypersetup{
+\hypersetup{%
 	pdftitle  = {Latex Template for the International Modelica Conference},
 	pdfauthor = {Author Name1, Author Name2},
         pdfsubject = {11th International Modelica Conference 2015},
@@ -53,19 +53,17 @@
 
 \date{} % <--- leave date empty
 \maketitle\thispagestyle{empty} %% <-- you need this for the first page
-\abstract{
+\abstract{%
 This template shows the guidelines on how to create a paper to be
 submitted to the International Modelica Conference. Templates are
-available for both the \LaTeX \ and Microsoft Word environment. This
-particular template document should work with pdf\LaTeX \ which is a
-\LaTeX \ variant which directly outputs PDF files instead of
+available for both the \LaTeX\ and Microsoft Word environment. This
+particular template document should work with pdf\LaTeX\ which is a
+\LaTeX\ variant which directly outputs PDF files instead of
 postscript files. However, if required it can be adapted to be used
-with a traditional \LaTeX \ document processor\footnote{Essentially by
+with a traditional \LaTeX\ document processor\footnote{Essentially by
 replacing the PDF files \textsf{figure1.pdf} and
 \textsf{figure2.pdf} by EPS files (Encapsulated PostScript
-format).}. Please send an email to
-\mbox{\small\texttt{bernhard.thiele@liu.se}} if there are any questions or
-suggestions regarding this template.
+format).}. Please visit \href{https://github.com/modelica-association/conference-templates}{\url{https://github.com/modelica-association/conference-templates}} if there are any questions or suggestions regarding this template.
 }
 
 \noindent\emph{Keywords: keyword1, keyword2}
@@ -75,8 +73,8 @@ suggestions regarding this template.
 In the following section, short style guidelines are given.
 
 \subsection{Title and Authors}
-Words should be capitalized in the title, e.g., "This is an Example of
-a Correct Title".  The author information should at least include
+Words should be capitalized in the title, e.g., ``This is an Example of
+a Correct Title''.  The author information should at least include
 name, affiliation (department, university, country). Addresses and
 emails are optional but strongly recommended.
 
@@ -93,7 +91,7 @@ supplied as a comma separated list.
 
 For all standard body text \textit{Times New Roman} with regular font style, and font size 10.5pt should be used. To emphasize a text or a word, use \textit{italic font style}. For verbatim text embedded in running text, including code fragments, use the style {\small\texttt{texttt}} with font Courier New with size 9.5pt should be used (1pt smaller than running text)
 
-For separate Modelica code examples, use the style font size 9 pt.  Similar for non-Modelica code examples. For formatting Modelica code this template used the listings definitions from \href{https://github.com/modelica-tools/listings-modelica}{\url{https://github.com/modelica-tools/listings-modelica}} (included in the package).
+For separate Modelica code examples, use the style font size 9~pt.  Similar for non-Modelica code examples. For formatting Modelica code this template used the listings definitions from \href{https://github.com/modelica-tools/listings-modelica}{\url{https://github.com/modelica-tools/listings-modelica}} (included in the package).
 
 Example:
 
@@ -108,7 +106,7 @@ end while;
 
 Figures should be numbered and include a description text. All figures
 should be referenced within the body text using the capitalized word
-"Figure" followed by the figure number. For example,
+``Figure'' followed by the figure number. For example,
 Figure~\ref{fig:figure1} shows a figure located inside one column and
 Figure~\ref{fig:figure2} illustrates how a figure can span over two
 columns.
@@ -130,8 +128,7 @@ columns.
 Table~\ref{tab:extab} illustrates the use of tables. It uses the
 booktabs package which provides improved typesetting of tables.
 \begin{table}[htbp]
-  \caption{Sizes of compiler phases, lines of code.}
-  \label{tab:extab}
+  \caption{Sizes of compiler phases, lines of code.}\label{tab:extab}
   \centering
   \begin{tabular}{p{6cm}l} \toprule
       \emph{Compiler Phase} & \emph{Lines} \\
@@ -143,7 +140,7 @@ booktabs package which provides improved typesetting of tables.
       OpenModelica scripting environment & 21883 \\
       Template language Susan compiler & 12119 \\
       Utility modules & 12983 \\
-      \emph{Total size (excl. generated code)} & \emph{194218} \\
+      \emph{Total size (excl.\ generated code)} & \emph{194218} \\
       \bottomrule
   \end{tabular}
 \end{table}
@@ -158,7 +155,7 @@ a_2& =b_2+c_2-d_2+e_2
 
 \section{Bibliographic References}
 The bibliographic reference list are shown at the end of the paper;
-starting with an unnumbered heading \emph{"References"}. The list of
+starting with an unnumbered heading \emph{``References''}. The list of
 references should be sorted in alphabetic order according to the first
 author's surname.
 
