@@ -14,6 +14,9 @@
 # *.ps
 # *.eps
 # *.pdf
+example-paper.pdf
+
+
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
