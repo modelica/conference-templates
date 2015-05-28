@@ -33,19 +33,20 @@
 % Set up basic geometry according to abstract option
 \ifmodelica@abstract
 	\LoadClass[11pt,a4paper,onecolumn]{article}
-	\usepackage{geometry}            %% please don't change geometry settings!
+	\RequirePackage{geometry}            %% please don't change geometry settings!
 	\geometry{left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot}
 \else
 	\LoadClass[11pt,a4paper,twocolumn]{article}
-	\usepackage{geometry}            %% please don't change geometry settings!
+	\RequirePackage{geometry}            %% please don't change geometry settings!
 	\geometry{left=20mm, right=20mm, top=25mm, bottom=25mm, noheadfoot}
 \fi
 
 % Load packages as done in the example
-\usepackage{graphicx}      %% use graphics
-\usepackage[T1]{fontenc}   %% get hyphenation and accented letters right
-\usepackage{mathptmx}      %% use fitting times fonts also in formulas
-\usepackage{courier}       %% For proper courier fonts in texttt
+\RequirePackage{graphicx}      %% use graphics
+\RequirePackage[T1]{fontenc}   %% get hyphenation and accented letters right
+\RequirePackage{mathptmx}      %% use fitting times fonts also in formulas
+\RequirePackage{amsmath}       %% get support for pretty maths formulars
+\RequirePackage{courier}       %% For proper courier fonts in texttt
 % do not change these lines:
 \pagestyle{empty}                %% no page numbers!
 
@@ -55,11 +56,11 @@
 \renewcommand{\footnotesize}{\fontsize{08.00pt}{09.9pt}\selectfont}
 
 % Labels and captions
-\usepackage[labelfont=bf, labelsep=period, font=small]{caption}  %% Get bold Figure/Table caption
+\RequirePackage[labelfont=bf, labelsep=period, font=small]{caption}  %% Get bold Figure/Table caption
                                                                  %% Set separator in figures to '.', set fontsize to small
 
 % Prepare author info
-\usepackage{authblk}                   %% Prepare author and affiliation blocks
+\RequirePackage{authblk}                   %% Prepare author and affiliation blocks
 \renewcommand\Authfont {\large}        %% Set author font
 \renewcommand\Affilfont{\normalsize}   %% Set affiliation font
 \renewcommand\Authsep  {\quad}         %% Set text between authors names
@@ -82,11 +83,11 @@
 \renewcommand{\maketitle}{\modelica@maketitle\thispagestyle{empty}\@afterindentfalse\@afterheading}
 
 % Make headings nice and compact
-\usepackage[compact]{titlesec}
+\RequirePackage[compact]{titlesec}
 
 % Make sure, the bibstyle is used
-\usepackage[round]{natbib}   %% author-year style referencing
-\usepackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
+\RequirePackage[round]{natbib}   %% author-year style referencing
+\RequirePackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
 \let\cite\citep              %% normal \cite produces \citep
 \let\modelica@bibliography\bibliography
 \renewcommand{\bibliography}[1]{\bibliographystyle{plainnat}\small\modelica@bibliography{#1}\normalsize}
