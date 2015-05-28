@@ -8,7 +8,7 @@ This project provides templates for the Modelica conferences.
 
 You can find the Microsoft Word template in `MSWord/`.
 
-### L<sup>A</sup>T<sub>E</sub>X
+### L<sup>A</sup>T<sub>E</sub>X template
 
 In in the `LaTeX/` directory you can find a special `modelica.cls` class file.
 See the example `LaTeX/example-paper.tex` on how to use the class file.
