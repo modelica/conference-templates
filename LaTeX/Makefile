@@ -9,7 +9,7 @@ $(NAME).pdf: $(NAME).tex $(NAME).bib
 
 clean:
 	rm -f *.aux *.bbl *.blg *-blx.bib *.log *.out *.run.xml *.toc *.bcf *~
-	rm -f *.nlo *.ist *.nls *.ilg
+	rm -f *.nlo *.ist *.nls *.ilg *.fls *.fdb*
 
 distclean: clean
 	rm -f $(NAME).pdf
