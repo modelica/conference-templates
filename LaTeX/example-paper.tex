@@ -20,18 +20,23 @@
 %
 % This class is created from the template for the Modelica 2015 conference
 
+%%% By default the modelica LaTeX class uses bibtex and natbib for refrences
 \documentclass{modelica}
+
+%%% As alternative also for unicode and @online support
+%%% use the more modern biber and biblatx instead
+%\documentclass[backend=biber]{modelica}
+%\addbibresource{example-paper.bib}
 
 \hypersetup{%
 	pdftitle  = {Latex Template for the International Modelica Conference},
 	pdfauthor = {Author Name1, Author Name2},
         pdfsubject = {11th International Modelica Conference 2015},
-        pdfkeywords = {Modelica, conference, LaTeX, template},
+        pdfkeywords = {Modelica, confercence, LaTeX, template},
 	hidelinks,
 	pdfpagelayout = SinglePage,
 	pdfcreator = pdflatex,
 	pdfproducer = pdflatex}
-
 
 % begin the document
 \begin{document}
@@ -63,7 +68,7 @@ postscript files. However, if required it can be adapted to be used
 with a traditional \LaTeX\ document processor\footnote{Essentially by
 replacing the PDF files \textsf{figure1.pdf} and
 \textsf{figure2.pdf} by EPS files (Encapsulated PostScript
-format).}. Please visit {\small\url{https://github.com/modelica-association/conference-templates}} 
+format).}. Please visit {\small\url{https://github.com/modelica-association/conference-templates}}
 if there are any questions or suggestions regarding this template.
 }
 
@@ -78,7 +83,6 @@ Words should be capitalized in the title, e.g., ``This is an Example of
 a Correct Title''.  The author information should at least include
 name, affiliation (department, university, country). Addresses and
 emails are optional but strongly recommended.
-
 
 \subsection{Abstract and Keywords}
 
@@ -101,7 +105,6 @@ while x<20 loop
   x := x+y*2;
 end while;
 \end{lstlisting}
-
 
 \section{Figures}
 
@@ -153,7 +156,6 @@ a_1& =b_1+c_1\\
 a_2& =b_2+c_2-d_2+e_2
 \end{align}
 
-
 \section{Bibliographic References}
 The bibliographic reference list are shown at the end of the paper;
 starting with an unnumbered heading \emph{``References''}. The list of
@@ -161,15 +163,18 @@ references should be sorted in alphabetic order according to the first
 author's surname.
 
 Citations are stated within the body text using the name of the
-reference enclosed within parentheses, e.g., \citep{Pantelides:1988}. If
+reference enclosed within parentheses, e.g., \cite{Pantelides:1988}. If
 more than one reference is cited at the same place, the list should be
 sorted, separated by semicolons and within parentheses, e.g.,
-\citep{DuffReid:1978,Pierce:2002,Plotkin:1981}. If possible, it is
+\cite{DuffReid:1978,Pierce:2002,Plotkin:1981}. If possible, it is
 encouraged to use DOIs instead of URLs in the bibliography.
 
 
-%--------------------------------------------------------------------------------
-% References using bibtex
+%%% choose one of the following: %%%
+%% References using bibtex (default)
 \bibliography{example-paper}
+
+%% References using biber and biblatex
+%\printbibliography
 
 \end{document}

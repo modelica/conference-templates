@@ -5,11 +5,7 @@ NAME=example-paper
 all: clean $(NAME).pdf
 
 $(NAME).pdf: $(NAME).tex $(NAME).bib
-	pdflatex $(NAME)
-	bibtex $(NAME)
-	pdflatex $(NAME)
-	pdflatex $(NAME)
-
+	latexmk -pdf $(NAME)
 
 clean:
 	rm -f *.aux *.bbl *.blg *-blx.bib *.log *.out *.run.xml *.toc *.bcf *~
