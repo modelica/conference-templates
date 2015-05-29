@@ -96,9 +96,8 @@
 
 \if@biber %% Process backend option "biber"
   \RequirePackage[backend=biber,
-                  style=authoryear,
-                  isbn=false%
-                  ]{biblatex}
+                  style=authoryear]
+                  {biblatex}
   \let\cite\parencite   %% normal \cite produces \parencite
   \let\modelica@printbibliography\printbibliography
   \renewcommand{\printbibliography}{\small\modelica@printbibliography\normalsize}%
