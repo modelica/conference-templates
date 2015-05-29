@@ -84,13 +84,33 @@
 
 % Make headings nice and compact
 \RequirePackage[compact]{titlesec}
-
-% Make sure, the bibstyle is used
-\RequirePackage[round]{natbib}   %% author-year style referencing
 \RequirePackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
-\let\cite\citep              %% normal \cite produces \citep
-\let\modelica@bibliography\bibliography
-\renewcommand{\bibliography}[1]{\bibliographystyle{plainnat}\small\modelica@bibliography{#1}\normalsize}
+
+% Process backend
+\newif\if@biber
+\@biberfalse%   %% we default to backend=bibtex
+
+\DeclareOption{backend=bibtex}{\@biberfalse}
+\DeclareOption{backend=biber}{\@bibertrue}
+\ProcessOptions% Process package options
+
+\if@biber %% Process backend option "biber"
+  \RequirePackage[backend=biber,
+                  style=authoryear,
+                  isbn=false%
+                  ]{biblatex}
+  \let\cite\parencite   %% normal \cite produces \parencite
+  \let\modelica@printbibliography\printbibliography
+  \renewcommand{\printbibliography}{\small\modelica@printbibliography\normalsize}%
+  %
+\else %% Process (default) backend option "bibtex"
+  \RequirePackage[round]{natbib}   %% author-year style referencing
+%    \PassOptionsToClass{round}{natbib}
+  \let\cite\citep              %% normal \cite produces \citep
+  \let\modelica@bibliography\bibliography
+  \renewcommand{\bibliography}[1]{\bibliographystyle{plainnat}\small\modelica@bibliography{#1}\normalsize}
+\fi
+
 
 % Professional tables
 \RequirePackage{booktabs}
