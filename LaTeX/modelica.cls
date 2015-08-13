@@ -57,7 +57,7 @@
 
 % Labels and captions
 \RequirePackage[labelfont=bf, labelsep=period, font=small]{caption}  %% Get bold Figure/Table caption
-                                                                 %% Set separator in figures to '.', set fontsize to small
+                                                                     %% Set separator in figures to '.', set fontsize to small
 
 % Prepare author info
 \RequirePackage{authblk}                   %% Prepare author and affiliation blocks
@@ -84,7 +84,7 @@
 
 % Make headings nice and compact
 \RequirePackage[compact]{titlesec}
-\RequirePackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
+\RequirePackage{doi}             %% Create correct hyperlinks for DOI numbers
 
 % Process backend
 \newif\if@biber
@@ -121,3 +121,8 @@
 \lstset{language = Modelica,
        basicstyle=\fontsize{9pt}{10.5pt}\selectfont,
        backgroundcolor = \color{white}}
+
+% Provide Modelica logos
+\RequirePackage{xspace}
+\def\ModelicaLogo{%
+  \smash{\raisebox{-2.5ex}{\includegraphics[height=7.0ex]{resources/ModelicaLogo}}}\xspace}
