@@ -17,7 +17,7 @@ The project contains also a [`Makefile`](LaTeX/Makefile) which you can adjust to
 
 ## License
 
-&copy; Copyright 2015 DLR, Modelica Associtaion
+&copy; Copyright 2015 Modelica Association
 
 This work may be distributed and/or modified under the
 conditions of the [LaTeX Project Public License](LICENSE), either version 1.3
