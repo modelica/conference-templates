@@ -51,9 +51,9 @@
 \pagestyle{empty}                %% no page numbers!
 
 % Some sizes
-\renewcommand{\normalsize}  {\fontsize{10.95pt}{12.3pt}\selectfont}
-\renewcommand{\small}       {\fontsize{09.00pt}{11.1pt}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{08.00pt}{09.9pt}\selectfont}
+\renewcommand{\normalsize}  {\fontsize{10.5pt}{12.3pt}\selectfont}
+\renewcommand{\small}       {\fontsize{09.5pt}{11.1pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{08.5pt}{09.9pt}\selectfont}
 
 % Labels and captions
 \RequirePackage[labelfont=bf, labelsep=period, font=small]{caption}  %% Get bold Figure/Table caption
