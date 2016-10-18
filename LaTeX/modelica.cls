@@ -51,9 +51,9 @@
 \pagestyle{empty}                %% no page numbers!
 
 % Some sizes
-\renewcommand{\normalsize}  {\fontsize{10.95pt}{12.3pt}\selectfont}
-\renewcommand{\small}       {\fontsize{09.00pt}{11.1pt}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{08.00pt}{09.9pt}\selectfont}
+\renewcommand{\normalsize}  {\fontsize{10.5pt}{12.3pt}\selectfont}
+\renewcommand{\small}       {\fontsize{09.5pt}{11.1pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{08.5pt}{09.9pt}\selectfont}
 
 % Labels and captions
 \RequirePackage[labelfont=bf, labelsep=period, font=small]{caption}  %% Get bold Figure/Table caption
@@ -70,9 +70,9 @@
 % Redefine \author's \and
 \def\and{\quad}
 
-% Redefine \title to be \textbf
+% Redefine \title to be \textbf and move it up to a height similar to the Word template
 \let\modelica@title\title
-\renewcommand{\title}[1]{\modelica@title{\textbf{#1}}}
+\renewcommand{\title}[1]{\modelica@title{\vspace{-1.0cm}\textbf{#1}}}
 
 % Redefine \date for it not to be used
 \date{} % <--- leave date empty
