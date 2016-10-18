@@ -10,14 +10,14 @@ You can find the Microsoft Word template in `MSWord/`.
 
 ### L<sup>A</sup>T<sub>E</sub>X template
 
-In in the `LaTeX/` directory you can find a special [`modelica.cls`](LaTeX/modelica.cls)
+In the `LaTeX/` directory you can find a special [`modelica.cls`](LaTeX/modelica.cls)
 class file.
 See the example [`example-paper.tex`](LaTeX/example-paper.tex) on how to use the class file.
 The project contains also a [`Makefile`](LaTeX/Makefile) which you can adjust to your needs.
 
 ## License
 
-&copy; Copyright 2015 Modelica Association
+&copy; Copyright 2015- Modelica Association
 
 This work may be distributed and/or modified under the
 conditions of the [LaTeX Project Public License](LICENSE), either version 1.3
