@@ -70,9 +70,9 @@
 % Redefine \author's \and
 \def\and{\quad}
 
-% Redefine \title to be \textbf
+% Redefine \title to be \textbf and move it up to a height similar to the Word template
 \let\modelica@title\title
-\renewcommand{\title}[1]{\modelica@title{\textbf{#1}}}
+\renewcommand{\title}[1]{\modelica@title{\vspace{-1.0cm}\textbf{#1}}}
 
 % Redefine \date for it not to be used
 \date{} % <--- leave date empty
