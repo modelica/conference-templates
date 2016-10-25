@@ -38,7 +38,7 @@
 \else
 	\LoadClass[11pt,a4paper,twocolumn]{article}
 	\RequirePackage{geometry}            %% please don't change geometry settings!
-	\geometry{left=20mm, right=20mm, top=25mm, bottom=25mm, noheadfoot}
+	\geometry{left=18mm, right=18mm, top=25mm, bottom=25mm, noheadfoot}
 \fi
 
 % Load packages as done in the example
