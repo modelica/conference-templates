@@ -23,7 +23,7 @@
 % Layout: Bernhard Thiele,  Linköping University, Sweden,  2015
 % Author: Andreas Klöckner, DLR Oberpfaffenhofen, Germany, 2015
 %
-\ProvidesClass{modelica}[2015/05/20 v2.0 Modelica 2015 conference template]
+\ProvidesClass{modelica}[2016/12/13 v2.1 Modelica conference template]
 
 % Declare an abstract option
 \newif\ifmodelica@abstract
