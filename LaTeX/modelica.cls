@@ -45,7 +45,7 @@
 \RequirePackage{graphicx}      %% use graphics
 \RequirePackage[T1]{fontenc}   %% get hyphenation and accented letters right
 \RequirePackage{mathptmx}      %% use fitting times fonts also in formulas
-\RequirePackage{amsmath}       %% get support for pretty maths formulars
+\RequirePackage{amsmath}       %% get support for pretty math formulas
 \RequirePackage{courier}       %% For proper courier fonts in texttt
 % do not change these lines:
 \pagestyle{empty}                %% no page numbers!
