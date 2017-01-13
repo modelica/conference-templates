@@ -32,13 +32,13 @@
 
 % Set up basic geometry according to abstract option
 \ifmodelica@abstract
-	\LoadClass[11pt,a4paper,onecolumn]{article}
-	\RequirePackage{geometry}            %% please don't change geometry settings!
-	\geometry{left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot}
+  \LoadClass[11pt,a4paper,onecolumn]{article}
+  \RequirePackage{geometry}            %% please don't change geometry settings!
+  \geometry{left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot}
 \else
-	\LoadClass[11pt,a4paper,twocolumn]{article}
-	\RequirePackage{geometry}            %% please don't change geometry settings!
-	\geometry{left=18mm, right=18mm, top=25mm, bottom=25mm, noheadfoot}
+  \LoadClass[11pt,a4paper,twocolumn]{article}
+  \RequirePackage{geometry}            %% please don't change geometry settings!
+  \geometry{left=18mm, right=18mm, top=25mm, bottom=25mm, noheadfoot}
 \fi
 
 % Load packages as done in the example
