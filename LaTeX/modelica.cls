@@ -82,8 +82,8 @@
 \let\modelica@maketitle\maketitle
 \renewcommand{\maketitle}{\modelica@maketitle\thispagestyle{empty}\@afterindentfalse\@afterheading}
 
-% Make headings nice and compact
-\RequirePackage[compact]{titlesec}
+% Make headings nice and compact and make sure to use a new version
+\RequirePackage[compact]{titlesec}[2016/03/21]
 \RequirePackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
 
 % Process backend
