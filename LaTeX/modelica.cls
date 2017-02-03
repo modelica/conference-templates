@@ -118,6 +118,6 @@
 \RequirePackage{color}
 \RequirePackage{listings}
 \input{resources/listings-modelica.cfg}
-\lstset{language = Modelica,
-       basicstyle=\fontsize{9pt}{10.5pt}\selectfont,
+\lstset{language = modelica,
+       basicstyle=\fontsize{9pt}{10.5pt}\ttfamily,
        backgroundcolor = \color{white}}
