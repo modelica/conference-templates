@@ -126,6 +126,5 @@
 \lstset{language = modelica,
        basicstyle=\fontsize{9pt}{10.5pt}\ttfamily,
        backgroundcolor = \color{white}}
-\RequirePackage{cleveref}      %% For easier cross-references
 \RequirePackage{numprint}
 \npthousandsep{\,}

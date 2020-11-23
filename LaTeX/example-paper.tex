@@ -88,7 +88,7 @@ For all standard body text \emph{Times New Roman} with regular font style, and f
 For separate Modelica code examples, use the style font size 9~pt.
 Similar for non-Modelica code examples.
 For formatting Modelica code this template used the listings definitions from {\small\url{https://github.com/modelica-tools/listings-modelica}} (included in the package).
-Code listings are cross-referenced as for example \Cref{lst:while-loop}.
+Code listings are cross-referenced as for example \autoref{lst:while-loop}.
 
 \begin{lstlisting}[caption=A while loop,label=lst:while-loop]
 while x<20 loop
@@ -114,8 +114,8 @@ Numbered items should be created with the \texttt{enumerate} environment:
 Figures should be numbered and include a description text. All figures
 should be referenced within the body text using the capitalized word
 ``Figure'' followed by the figure number. For example,
-\Cref{fig:figure1} shows a figure located inside one column and
-\Cref{fig:figure2} illustrates how a figure can span over two
+\autoref{fig:figure1} shows a figure located inside one column and
+\autoref{fig:figure2} illustrates how a figure can span over two
 columns.
 You should use vector graphics such as (SVG, EPS, PDF, EMF) rather than raster images such as (JPG, PNG) whenever possible.
 Photographs naturally should be raster images.
@@ -142,11 +142,11 @@ Equations should be numbered on the right side, such as:
 a_1& =b_1+c_1 \label{eq:a1} \\
 a_2& =b_2+c_2-d_2+e_2 \label{eq:a2}
 \end{align}
-Equations are cross-referenced as \Cref{eq:a1} and \Cref{eq:a2}.
+Equations are cross-referenced as \autoref{eq:a1} and \autoref{eq:a2}.
 
 \section{Tables}
 
-\Cref{tab:extab} illustrates the use of tables.
+\autoref{tab:extab} illustrates the use of tables.
 It uses the \texttt{booktabs} package which provides improved typesetting of tables and \texttt{numprint} for the thousands separator.
 \begin{table}[htbp]
   \caption{Sizes of compiler phases, lines of code.}\label{tab:extab}
@@ -182,10 +182,6 @@ Maecenas iaculis odio at purus porta, ac tincidunt libero interdum. Aliquam sed 
 Praesent suscipit, purus eget tempor placerat, lectus lorem facilisis odio, at sagittis sapien leo ac justo. Etiam suscipit quis nisl vel posuere. Suspendisse vulputate arcu eu metus maximus, vitae scelerisque elit porta. Aliquam pulvinar libero in libero interdum iaculis. In metus ligula, vestibulum et ligula eu, sagittis mattis odio. Duis in convallis lorem. Nam at pharetra est. Donec eleifend fringilla odio vitae placerat. Integer sit amet eros eget odio condimentum placerat sit amet sed purus. Nulla at ultrices velit. Etiam ornare, purus non lacinia ullamcorper, nunc augue interdum magna, quis laoreet ante risus id sapien.
 
 Aenean id leo gravida, sodales sem ut, imperdiet mauris. Proin pellentesque libero laoreet libero volutpat, quis euismod nibh commodo. Nam et dui vel augue convallis aliquam. Mauris magna diam, ultricies eget placerat porttitor, hendrerit non mi. Quisque pulvinar varius ex, sollicitudin vestibulum est cursus eu. Sed lobortis volutpat massa sed bibendum. Cras rutrum, sem sit amet iaculis egestas, nisi turpis vehicula ipsum, eget congue risus enim vehicula turpis. Curabitur sit amet tortor vitae augue tempor consequat.
-
-Vestibulum volutpat luctus arcu non elementum. Donec sed lectus id sapien varius laoreet sit amet non nulla. Morbi iaculis turpis tincidunt consectetur feugiat. Donec orci dolor, sagittis in mi ut, gravida iaculis ante. Quisque ut risus a leo laoreet aliquam nec non nulla. Vestibulum ut ipsum vehicula, tempor tortor at, faucibus ipsum. Aliquam varius enim id lacus sagittis, lacinia pretium ipsum aliquam. Ut nulla velit, faucibus eget leo a, sollicitudin vehicula ante. Donec leo ex, fermentum vel imperdiet in, venenatis commodo odio. Donec lacinia bibendum erat ac venenatis.
-
-Nunc volutpat viverra turpis, sit amet porta nunc viverra vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ut gravida ex, non tincidunt sem. Fusce ac mollis lacus. Duis ac arcu pretium, maximus sapien sed, tristique nulla. Fusce suscipit feugiat ornare. Curabitur vitae accumsan mauris, non suscipit metus. Sed venenatis, lectus sit amet porta blandit, velit arcu rhoncus leo, a laoreet justo urna quis tortor. Nullam faucibus nibh sed ornare sodales. Nulla tempus velit neque, quis elementum dui accumsan ac. Cras fermentum maximus ipsum sit amet volutpat. Mauris consequat leo non finibus tristique. Sed pulvinar risus varius aliquet imperdiet. Vivamus egestas quis tellus vitae aliquet.
 
 \section{Bibliographic References}
 The bibliographic reference list are shown at the end of the paper;
