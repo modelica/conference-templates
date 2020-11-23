@@ -23,7 +23,7 @@
 % Layout: Bernhard Thiele,  Linköping University, Sweden,  2015
 % Author: Andreas Klöckner, DLR Oberpfaffenhofen, Germany, 2015
 %
-\ProvidesClass{modelica}[2016/12/13 v2.1 Modelica conference template]
+\ProvidesClass{modelica}[2020/11/23 v3.0 Modelica conference template]
 
 % Declare an abstract option
 \newif\ifmodelica@abstract
@@ -88,19 +88,25 @@
 
 % Process backend
 \newif\if@biber
-\@biberfalse%   %% we default to backend=bibtex
+\@bibertrue%   %% we default to backend=biber
 
 \DeclareOption{backend=bibtex}{\@biberfalse}
+\DeclareOption{backend=natbib}{\@biberfalse}
 \DeclareOption{backend=biber}{\@bibertrue}
 \ProcessOptions% Process package options
 
 \if@biber %% Process backend option "biber"
   \RequirePackage[backend=biber,
-                  style=authoryear]
+                  style=authoryear,
+                  dashed=false,
+                  dateabbrev=false,
+                  urldate=iso,
+                  date=iso]
                   {biblatex}
   \let\cite\parencite   %% normal \cite produces \parencite
   \let\modelica@printbibliography\printbibliography
-  \renewcommand{\printbibliography}{\small\modelica@printbibliography\normalsize}%
+  \renewcommand{\printbibliography}{\urlstyle{same}\modelica@printbibliography}%
+  \AtBeginBibliography{\small}
   %
 \else %% Process (default) backend option "bibtex"
   \RequirePackage[round]{natbib}   %% author-year style referencing
@@ -109,7 +115,6 @@
   \let\modelica@bibliography\bibliography
   \renewcommand{\bibliography}[1]{\bibliographystyle{plainnat}\small\modelica@bibliography{#1}\normalsize}
 \fi
-
 
 % Professional tables
 \RequirePackage{booktabs}
@@ -121,3 +126,6 @@
 \lstset{language = modelica,
        basicstyle=\fontsize{9pt}{10.5pt}\ttfamily,
        backgroundcolor = \color{white}}
+\RequirePackage{cleveref}      %% For easier cross-references
+\RequirePackage{numprint}
+\npthousandsep{\,}
