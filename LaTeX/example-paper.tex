@@ -1,4 +1,4 @@
-%% sample file for Modelica 2017 Conference paper
+%% sample file for Modelica 2021 Conference paper
 %% Copyright  Modelica Association
 %
 % This work may be distributed and/or modified under the
@@ -13,21 +13,17 @@
 %   https://github.com/modelica-association/conference-templates
 %
 % The Current Maintainers are: @akloeckner, @dietmarw, @bernhard-thiele
-% With additions by @casella
+% With additions by @casella, @sjoelund
 %
 % This work consists of all files in the GitHub repository except
 % a) The files indicated by .gitignore files
 % b) The GitHub management files .gitignore, *.md
 %
-% This class is created from the template for the Modelica 2017 conference
+% This class is created from the template for the Modelica 2021 conference
 
-%%% By default the modelica LaTeX class uses bibtex and natbib for references
+%%% Use the more modern biber and biblatex for Unicode and @online support
 \documentclass{modelica}
-
-%%% As alternative also for Unicode and @online support
-%%% use the more modern biber and biblatx instead
-%\documentclass[backend=biber]{modelica}
-%\addbibresource{example-paper.bib}
+\addbibresource{example-paper.bib}
 
 \hypersetup{%
   pdftitle  = {Latex Template for the International Modelica Conference},
@@ -46,7 +42,7 @@
 \begin{document}
 \thispagestyle{empty}
 
-\title{Int. Modelica Conf. 2017 Paper Title}
+\title{Int. Modelica Conf. 2021 Paper Title}
 \author[1]{Author Name}
 \author[1]{Author Name}
 \author[2]{Author Name}
@@ -61,17 +57,8 @@
 
 \maketitle\thispagestyle{empty} %% <-- you need this for the first page
 \abstract{%
-This template shows the guidelines on how to create a paper to be
-submitted to the International Modelica Conference. Templates are
-available for both the \LaTeX\ and Microsoft Word environment. This
-particular template document should work with pdf\LaTeX\ which is a
-\LaTeX\ variant which directly outputs PDF files instead of
-postscript files. However, if required it can be adapted to be used
-with a traditional \LaTeX\ document processor\footnote{Essentially by
-replacing the PDF files \textsf{figure1.pdf} and
-\textsf{figure2.pdf} by EPS files (Encapsulated PostScript
-format).}. Please visit {\small\url{https://github.com/modelica-association/conference-templates}}
-if there are any questions or suggestions regarding this template.
+This template shows the guidelines on how to create a paper to be submitted to the International Modelica Conference.
+Please visit {\small\url{https://github.com/modelica-association/conference-templates}} if there are any questions or suggestions regarding this template.
 }
 
 \noindent\emph{Keywords: keyword1, keyword2}
@@ -98,24 +85,42 @@ supplied as a comma separated list.
 
 For all standard body text \emph{Times New Roman} with regular font style, and font size 10.5pt should be used. To emphasize a text or a word, use \emph{italic font style}. For verbatim text embedded in running text, including code fragments, use the style {\small\texttt{texttt}} with font Courier New with size 9.5pt should be used (1pt smaller than running text)
 
-For separate Modelica code examples, use the style font size 9~pt.  Similar for non-Modelica code examples. For formatting Modelica code this template used the listings definitions from {\small\url{https://github.com/modelica-tools/listings-modelica}} (included in the package).
+For separate Modelica code examples, use the style font size 9~pt.
+Similar for non-Modelica code examples.
+For formatting Modelica code this template used the listings definitions from {\small\url{https://github.com/modelica-tools/listings-modelica}} (included in the package).
+Code listings are cross-referenced as for example \autoref{lst:while-loop}.
 
-Example:
-
-\begin{lstlisting}
+\begin{lstlisting}[caption=A while loop,label=lst:while-loop]
 while x<20 loop
   x := x+y*2;
 end while;
 \end{lstlisting}
+
+\subsection{Lists}
+
+Bullets should be created with the \texttt{itemize} environment:
+\begin{itemize}
+\item The first text item.
+\item The second text item.
+\end{itemize}
+Numbered items should be created with the \texttt{enumerate} environment:
+\begin{enumerate}
+\item The first text item.
+\item The second text item.
+\end{enumerate}
 
 \section{Figures}
 
 Figures should be numbered and include a description text. All figures
 should be referenced within the body text using the capitalized word
 ``Figure'' followed by the figure number. For example,
-Figure~\ref{fig:figure1} shows a figure located inside one column and
-Figure~\ref{fig:figure2} illustrates how a figure can span over two
+\autoref{fig:figure1} shows a figure located inside one column and
+\autoref{fig:figure2} illustrates how a figure can span over two
 columns.
+You should use vector graphics such as (SVG, EPS, PDF, EMF) rather than raster images such as (JPG, PNG) whenever possible.
+Photographs naturally should be raster images.
+Rather than using print screen you can often use the "Print" option of software to produce a PDF and especially plots can often be printed or exported to tools that produce vector graphic plots.
+If you need to convert vector images between different formats, \textcite{inkscape} is very handy.
 
 \begin{figure}[b]
 \centering
@@ -131,32 +136,31 @@ columns.
 \label{fig:figure2}
 \end{figure*}
 
-Table~\ref{tab:extab} illustrates the use of tables. It uses the
-booktabs package which provides improved typesetting of tables.
-\begin{table}[htbp]
-  \caption{Sizes of compiler phases, lines of code.}\label{tab:extab}
-  \centering
-  \begin{tabular}{p{6cm}l} \toprule
-      \emph{Compiler Phase} & \emph{Lines} \\
-      \midrule
-      BackEnd (from flat Modelica to sorted eq.syst.) & 29190 \\
-      Code generation (generated code) & 35971 \\
-      Code generation (template source code) & 8957 \\
-      FrontEnd (up to flat Modelica) & 92192 \\
-      OpenModelica scripting environment & 21883 \\
-      Template language Susan compiler & 12119 \\
-      Utility modules & 12983 \\
-      \emph{Total size (excl.\ generated code)} & \emph{194218} \\
-      \bottomrule
-  \end{tabular}
-\end{table}
-
 \section{Equations}
 Equations should be numbered on the right side, such as:
 \begin{align}
-a_1& =b_1+c_1\\
-a_2& =b_2+c_2-d_2+e_2
+a_1& =b_1+c_1 \label{eq:a1} \\
+a_2& =b_2+c_2-d_2+e_2 \label{eq:a2}
 \end{align}
+Equations are cross-referenced as \autoref{eq:a1} and \autoref{eq:a2}.
+
+\section{Tables}
+
+\autoref{tab:extab} illustrates the use of tables.
+It uses the \texttt{booktabs} package which provides improved typesetting of tables and \texttt{numprint} for the thousands separator.
+\begin{table}[htbp]
+  \caption{Sizes of compiler phases, lines of code.}\label{tab:extab}
+  \centering
+  \begin{tabular}{p{6cm}r} \toprule
+      \emph{Compiler Phase} & \emph{Lines} \\
+      \midrule
+      FrontEnd & \numprint{92192} \\
+      BackEnd & \numprint{29190} \\
+      Code generation & \numprint{8957} \\
+      \emph{Total size} & \emph{\numprint{130339}} \\
+      \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Additional meaningless text}
 This section contains additional text to bring the example length to three pages
@@ -179,31 +183,39 @@ Praesent suscipit, purus eget tempor placerat, lectus lorem facilisis odio, at s
 
 Aenean id leo gravida, sodales sem ut, imperdiet mauris. Proin pellentesque libero laoreet libero volutpat, quis euismod nibh commodo. Nam et dui vel augue convallis aliquam. Mauris magna diam, ultricies eget placerat porttitor, hendrerit non mi. Quisque pulvinar varius ex, sollicitudin vestibulum est cursus eu. Sed lobortis volutpat massa sed bibendum. Cras rutrum, sem sit amet iaculis egestas, nisi turpis vehicula ipsum, eget congue risus enim vehicula turpis. Curabitur sit amet tortor vitae augue tempor consequat.
 
-Vestibulum volutpat luctus arcu non elementum. Donec sed lectus id sapien varius laoreet sit amet non nulla. Morbi iaculis turpis tincidunt consectetur feugiat. Donec orci dolor, sagittis in mi ut, gravida iaculis ante. Quisque ut risus a leo laoreet aliquam nec non nulla. Vestibulum ut ipsum vehicula, tempor tortor at, faucibus ipsum. Aliquam varius enim id lacus sagittis, lacinia pretium ipsum aliquam. Ut nulla velit, faucibus eget leo a, sollicitudin vehicula ante. Donec leo ex, fermentum vel imperdiet in, venenatis commodo odio. Donec lacinia bibendum erat ac venenatis.
-
-Nunc volutpat viverra turpis, sit amet porta nunc viverra vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ut gravida ex, non tincidunt sem. Fusce ac mollis lacus. Duis ac arcu pretium, maximus sapien sed, tristique nulla. Fusce suscipit feugiat ornare. Curabitur vitae accumsan mauris, non suscipit metus. Sed venenatis, lectus sit amet porta blandit, velit arcu rhoncus leo, a laoreet justo urna quis tortor. Nullam faucibus nibh sed ornare sodales. Nulla tempus velit neque, quis elementum dui accumsan ac. Cras fermentum maximus ipsum sit amet volutpat. Mauris consequat leo non finibus tristique. Sed pulvinar risus varius aliquet imperdiet. Vivamus egestas quis tellus vitae aliquet.
-
 \section{Bibliographic References}
 The bibliographic reference list are shown at the end of the paper;
 starting with an unnumbered heading \emph{``References''}. The list of
 references should be sorted in alphabetic order according to the first
 author's surname.
+The first author's name is printed surname first and subsequent authors are printed with the first name first.
 
 Citations are stated within the body text using the name of the
 reference enclosed within parentheses, e.g., \cite{Pantelides:1988}. If
 more than one reference is cited at the same place, the list should be
 sorted, separated by semicolons and within parentheses, e.g.,
-\cite{DuffReid:1978,Pierce:2002,Plotkin:1981}. If possible, it is
-encouraged to use DOIs instead of URLs in the bibliography.
+\cite{DuffReid:1978,Pierce:2002,Plotkin:1981}.
+It is also possible use the textcite command to include a reference more naturally in the text: \textcite{Pantelides:1988} wrote something interesting in his paper.
+If there is a DOI for the reference, use it instead of URLs in the bibliography.
 
-Citations for relevant Modelica language specifications (MLSs) are provided as 
+Citations for relevant Modelica language specifications (MLSs) are provided as
 MLSv32r2 \cite{MLSv32r2}, MLSv33r1 \cite{MLSv33r1}, and MLSv34 \cite{MLSv34}.
 
-%%% choose one of the following: %%%
-%% References using bibtex (default)
-\bibliography{example-paper}
+All entries in the reference list should be cited in the manuscript.
 
-%% References using biber and biblatex
-%\printbibliography
+In order to populate the bibliography with different kinds of entries to show how they should be printed, here are some additional citations:
+
+\begin{itemize}
+\item A book \cite{Kernighan:1988}.
+\item A conference paper \cite{colaco:2003}.
+\item A couple of fake PhD, MSc, and BSc thesis \cite{Doe:PhD,Doe:MSc,Doe:BSc}.
+\end{itemize}
+
+\section*{Acknowledgements}
+
+This work has been supported by X (grant numbers aaaa, bbbb); Y (grant number cccc) and Z (grant number dddd).
+The authors would also like to thank A and B for their support with implementation of the software.
+
+\printbibliography
 
 \end{document}
