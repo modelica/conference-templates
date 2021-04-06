@@ -102,7 +102,7 @@
                   dateabbrev=false,
                   urldate=iso,
                   date=iso]
-                  {biblatex}
+                  {biblatex}[2018/03/04 v3.11 programmable bibliographies (PK/MW)]
   \let\cite\parencite   %% normal \cite produces \parencite
   \let\modelica@printbibliography\printbibliography
   \renewcommand{\printbibliography}{\urlstyle{same}\modelica@printbibliography}%
