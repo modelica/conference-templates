@@ -48,6 +48,7 @@
 \RequirePackage{mathptmx}      %% use fitting times fonts also in formulas
 \RequirePackage{amsmath}       %% get support for pretty math formulas
 \RequirePackage{courier}       %% For proper courier fonts in texttt
+\RequirePackage{csquotes}      %% for language correct quotes since we use Babel
 % do not change these lines:
 \pagestyle{empty}                %% no page numbers!
 
