@@ -101,7 +101,8 @@
                   dashed=false,
                   dateabbrev=false,
                   urldate=iso,
-                  date=iso]
+                  date=iso,
+                  seconds=true]
                   {biblatex}[2018/03/04 v3.11 programmable bibliographies (PK/MW)]
   \let\cite\parencite   %% normal \cite produces \parencite
   \let\modelica@printbibliography\printbibliography
