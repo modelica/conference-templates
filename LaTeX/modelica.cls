@@ -42,6 +42,7 @@
 \fi
 
 % Load packages as done in the example
+\RequirePackage[main=english]{babel} %% we use English for the conference
 \RequirePackage{graphicx}      %% use graphics
 \RequirePackage[T1]{fontenc}   %% get hyphenation and accented letters right
 \RequirePackage{mathptmx}      %% use fitting times fonts also in formulas
@@ -126,5 +127,5 @@
 \lstset{language = modelica,
        basicstyle=\fontsize{9pt}{10.5pt}\ttfamily,
        backgroundcolor = \color{white}}
-\RequirePackage{numprint}
+\RequirePackage[autolanguage]{numprint}
 \npthousandsep{\,}
