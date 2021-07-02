@@ -83,7 +83,7 @@ supplied as a comma separated list.
 
 \subsection{Fonts}
 
-For all standard body text \emph{Times New Roman} with regular font style, and font size 10.5pt should be used. To emphasize a text or a word, use \emph{italic font style}. For verbatim text embedded in running text, including code fragments, use the style {\small\texttt{texttt}} with font Courier New with size 9.5pt should be used (1pt smaller than running text). You can use the provided \code{\textbackslash{}code} macro.
+For all standard body text \emph{Times New Roman} with regular font style, and font size 10.5pt should be used. To emphasize a text or a word, use \emph{italic font style}. For verbatim text embedded in running text, including code fragments, use the style {\code{texttt}} with font Courier New with size 9.5pt should be used (1pt smaller than running text). You can use the provided \code{\textbackslash{}code} macro.
 
 For separate Modelica code examples, use the style font size 9~pt.
 Similar for non-Modelica code examples.
@@ -98,12 +98,12 @@ end while;
 
 \subsection{Lists}
 
-Bullets should be created with the \texttt{itemize} environment:
+Bullets should be created with the \code{itemize} environment:
 \begin{itemize}
 \item The first text item.
 \item The second text item.
 \end{itemize}
-Numbered items should be created with the \texttt{enumerate} environment:
+Numbered items should be created with the \code{enumerate} environment:
 \begin{enumerate}
 \item The first text item.
 \item The second text item.
@@ -147,7 +147,7 @@ Equations are cross-referenced as \autoref{eq:a1} and \autoref{eq:a2}.
 \section{Tables}
 
 \autoref{tab:extab} illustrates the use of tables.
-It uses the \texttt{booktabs} package which provides improved typesetting of tables and \texttt{numprint} for the thousands separator.
+It uses the \code{booktabs} package which provides improved typesetting of tables and \code{numprint} for the thousands separator.
 \begin{table}[htbp]
   \caption{Sizes of compiler phases, lines of code.}\label{tab:extab}
   \centering
