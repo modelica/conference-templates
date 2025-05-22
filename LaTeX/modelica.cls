@@ -102,6 +102,8 @@
                   style=authoryear,
                   dashed=false,
                   dateabbrev=false,
+                  maxcitenames=2,
+                  maxbibnames=7,
                   urldate=iso,
                   date=iso,
                   seconds=true]
