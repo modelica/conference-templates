@@ -23,22 +23,49 @@
 % Layout: Bernhard Thiele,  Linköping University, Sweden,  2015
 % Author: Andreas Klöckner, DLR Oberpfaffenhofen, Germany, 2015
 %
-\ProvidesClass{modelica}[2020/11/23 v3.0 Modelica conference template]
+\ProvidesClass{modelica}[2026/07/26 v3.1 Modelica conference template]
 
-% Declare an abstract option
+% Layout / document-type options
 \newif\ifmodelica@abstract
+\newif\ifmodelica@userpresentation
 \DeclareOption{abstract}{\modelica@abstracttrue}
-\ProcessOptions
+\DeclareOption{userpresentation}{\modelica@userpresentationtrue}
 
-% Set up basic geometry according to abstract option
-\ifmodelica@abstract
+% Bibliography backend (default: biber/biblatex)
+\newif\if@biber
+\@bibertrue
+\DeclareOption{backend=bibtex}{\@biberfalse}
+\DeclareOption{backend=natbib}{\@biberfalse}
+\DeclareOption{backend=biber}{\@bibertrue}
+
+\ProcessOptions\relax
+
+% Mutual exclusion: user presentation wins over legacy abstract layout
+\ifmodelica@userpresentation
+  \ifmodelica@abstract
+    \ClassWarningNoLine{modelica}{%
+      Options 'userpresentation' and 'abstract' were both set;
+      using 'userpresentation'}
+  \fi
+\fi
+
+% Set up basic geometry according to document type
+% Scientific papers and user presentations share the same page margins.
+% The legacy 'abstract' option keeps its own (narrower) geometry.
+\ifmodelica@userpresentation
   \LoadClass[11pt,a4paper,onecolumn]{article}
   \RequirePackage{geometry}            %% please don't change geometry settings!
-  \geometry{left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot}
-\else
-  \LoadClass[11pt,a4paper,twocolumn]{article}
-  \RequirePackage{geometry}            %% please don't change geometry settings!
   \geometry{left=18mm, right=18mm, top=25mm, bottom=25mm, noheadfoot}
+\else
+  \ifmodelica@abstract
+    \LoadClass[11pt,a4paper,onecolumn]{article}
+    \RequirePackage{geometry}            %% please don't change geometry settings!
+    \geometry{left=35mm, right=35mm, top=15mm, bottom=20mm, noheadfoot}
+  \else
+    \LoadClass[11pt,a4paper,twocolumn]{article}
+    \RequirePackage{geometry}            %% please don't change geometry settings!
+    \geometry{left=18mm, right=18mm, top=25mm, bottom=25mm, noheadfoot}
+  \fi
 \fi
 
 % Load packages as done in the example
@@ -86,16 +113,22 @@
 
 % Make headings nice and compact and make sure to use a new version
 \RequirePackage[compact]{titlesec}[2016/03/21]
-\RequirePackage{doi}             %% Create cor­rect hy­per­links for DOI num­bers
+\RequirePackage{doi}             %% Create correct hyperlinks for DOI numbers
 
-% Process backend
-\newif\if@biber
-\@bibertrue%   %% we default to backend=biber
-
-\DeclareOption{backend=bibtex}{\@biberfalse}
-\DeclareOption{backend=natbib}{\@biberfalse}
-\DeclareOption{backend=biber}{\@bibertrue}
-\ProcessOptions% Process package options
+% User presentations: no "Abstract" heading; keep body text flush with paper style
+\ifmodelica@userpresentation
+  \renewenvironment{abstract}{%
+    \par\noindent\ignorespaces
+  }{%
+    \par
+  }
+  % Slightly tighter vertical spacing helps stay on a single page
+  \titlespacing*{\section}{0pt}{1.0ex plus .2ex}{0.4ex plus .1ex}
+  \AtBeginDocument{%
+    \setlength{\abovecaptionskip}{4pt}%
+    \setlength{\belowcaptionskip}{2pt}%
+  }
+\fi
 
 \if@biber %% Process backend option "biber"
   \RequirePackage[backend=biber,
@@ -113,7 +146,7 @@
   \renewcommand{\printbibliography}{\urlstyle{same}\modelica@printbibliography}%
   \AtBeginBibliography{\small}
   %
-\else %% Process (default) backend option "bibtex"
+\else %% Process backend option "bibtex" / "natbib"
   \RequirePackage[round]{natbib}   %% author-year style referencing
 %    \PassOptionsToClass{round}{natbib}
   \let\cite\citep              %% normal \cite produces \citep
